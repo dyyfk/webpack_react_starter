@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Markdown } from './../components/text'
+import { Markdown } from '@macrostrat/ui-components';
 
 
 class App extends Component {

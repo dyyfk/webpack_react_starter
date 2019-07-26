@@ -31,5 +31,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         })
-    ]
+    ],
+    resolve: {
+      extensions: [".coffee", ".js", ".styl",".css",".html",".md"],
+    }
 }
