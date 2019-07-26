@@ -11,7 +11,12 @@ let jsLoader = {
     options: {
         presets: ['@babel/preset-env', '@babel/preset-react'],
     }
-}
+};
+
+let fontLoader = {
+  loader: 'file-loader',
+  options: {name: "fonts/[name].[ext]"}
+};
 
 module.exports = {
     entry: './src/index.js',
@@ -23,6 +28,7 @@ module.exports = {
         rules: [
             { test: /\.(js|jsx)$/, use: [jsLoader], exclude: /node_modules/ },
             { test: /\.coffee$/, use: [jsLoader, "coffee-loader"] },
+            { test: /\.(eot|svg|ttf|woff|woff2)$/, use: [fontLoader]},
             { test: /\.styl$/, use: ["style-loader", "css-loader", stylusLoader] },
             { test: /\.css$/, use: ["style-loader", 'css-loader'] }
         ]
